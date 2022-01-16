@@ -1,21 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project_ui/data/dummy.dart';
 import 'package:flutter_project_ui/ui_widget/last_product_ui.dart';
 import 'package:flutter_project_ui/ui_widget/last_ui.dart';
-import 'package:flutter_project_ui/ui_widget/product_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class LastScreen extends StatelessWidget {
-  // const LastScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
                 children: [
@@ -24,92 +20,83 @@ class LastScreen extends StatelessWidget {
                     fit: BoxFit.fill,
                     width: double.infinity,
                   ),
-                  Positioned(
-                    top: 20,
-                    left: 6,
+                  PositionedDirectional(
+                    top: 35.h,
+                    start: 6.w,
                     child: IconButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/NumScreen');
                       },
                       icon: Icon(
                         Icons.arrow_back,
-                        size: 30,
+                        size: 25.r,
                         color: Colors.white,
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10.h),
               Container(
-                margin: EdgeInsets.all(17),
+                margin: EdgeInsets.all(17.r),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Minimalism ',
+                          'Minimalism '.tr,
                           style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 26.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          'Lifestyle ',
+                          'Lifestyle '.tr,
                           style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 26.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
-
-                    // CircleAvatar(radius: 30, backgroundColor: Colors.deepOrange,),
-
-                    SizedBox(
-                      width: 90,
-                    ),
-
+                    SizedBox(width: 80.w),
                     Container(
-                      width: 70,
-                      height: 70,
+                      width: 70.r,
+                      height: 70.r,
                       decoration: BoxDecoration(
-                          // color: Colors.black,
                           image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMGnCfM9yrkXJy5jvysBQHbKVewO9SvcwyTw&usqp=CAU'),
-                              fit: BoxFit.cover),
+                            image: NetworkImage(
+                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMGnCfM9yrkXJy5jvysBQHbKVewO9SvcwyTw&usqp=CAU'),
+                            fit: BoxFit.cover,
+                          ),
                           shape: BoxShape.circle,
                           border:
                               Border.all(width: 1, color: Colors.deepOrange),
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.orange.shade50,
-                                blurRadius: 0.9,
+                                blurRadius: 0.9.r,
                                 offset: Offset(1, 0),
-                                spreadRadius: 12),
+                                spreadRadius: 12.r),
                           ]),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 5.h,
               ),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.r),
                 child: Text(
-                  'Being the savage\' bowsman , that is the person who pulied the bow- car in his boat present adequate information on various aspects ',
-                  style: TextStyle(fontSize: 14),
+                  'des'.tr,
+                  style: TextStyle(fontSize: 14.sp),
                 ),
               ),
               Divider(
-                height: 0.6,
+                height: 0.6.h,
                 color: Colors.grey,
                 thickness: 0.3,
                 endIndent: 12,

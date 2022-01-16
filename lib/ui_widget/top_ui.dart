@@ -1,30 +1,28 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_project_ui/models/topAuthors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
-class TopUi extends StatelessWidget {
-  TopAuthors tops;
+class TopUI extends StatelessWidget {
+  final TopAuthors tops;
 
-
-  TopUi({this.tops});
+  TopUI({this.tops});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.all(18.r),
       child: Column(
         children: [
-
-          CircleAvatar(radius: 40, backgroundImage: NetworkImage(tops.imgAuthors),),
-          SizedBox(height: 14,),
-          
-          Text(tops.topAuthors,style: TextStyle(color: Colors.black,fontSize: 12),)
-
-
-
-
-
+          CircleAvatar(
+            radius: 40.r,
+            backgroundImage: NetworkImage(tops.imgAuthors),
+          ),
+          SizedBox(height: 14.h),
+          Text(
+            tops.topAuthors.tr,
+            style: TextStyle(color: Colors.black, fontSize: 12.sp),
+          )
         ],
       ),
     );

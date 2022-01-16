@@ -3,6 +3,8 @@ import 'package:flutter_project_ui/data/dummy.dart';
 import 'package:flutter_project_ui/ui_widget/ColHand.dart';
 import 'package:flutter_project_ui/ui_widget/ContainerShape.dart';
 import 'package:flutter_project_ui/ui_widget/top_ui.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class NumScreen extends StatelessWidget {
   @override
@@ -10,9 +12,15 @@ class NumScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.teal.shade600,
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.pushNamed(context, '/LastScreen');
-        }, icon: Icon(Icons.segment,size: 33,),),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/LastScreen');
+          },
+          icon: Icon(
+            Icons.segment,
+            size: 25.r,
+          ),
+        ),
         elevation: 0,
         backgroundColor: Colors.teal.shade600,
       ),
@@ -30,32 +38,41 @@ class NumScreen extends StatelessWidget {
                     height: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(30),
-                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30.r),
+                        topLeft: Radius.circular(30.r),
                       ),
                       color: Colors.white,
                     ),
                     child: Column(
                       children: [
                         ColHand(),
-                        SizedBox(height: 12,),
-                        Divider(height: 2, color: Colors.grey,thickness: 1,indent: 20, endIndent: 20,),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 240,top: 20),
-                          child: Text('Top Authors', style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold,),),
+                        SizedBox(height: 12.h),
+                        Divider(
+                          height: 2.h,
+                          color: Colors.grey,
+                          thickness: 1,
+                          indent: 20,
+                          endIndent: 20,
                         ),
-
+                        Padding(
+                          padding: EdgeInsetsDirectional.only(end: 240.w, top: 20.h),
+                          child: Text(
+                            'Top Authors'.tr,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                         SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
-                                children: to.map((e){
-                                  return TopUi(tops: e);
-                                }).toList()
-                            ))
-
+                                children: to.map((e) {
+                              return TopUI(tops: e);
+                            }).toList()))
                       ],
                     ),
-
                   ),
                 ),
               ],

@@ -1,5 +1,4 @@
-class  TopAuthors{
-
+class TopAuthors {
   String topAuthors;
   String imgAuthors;
 
