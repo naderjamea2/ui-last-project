@@ -15,10 +15,10 @@ class TopUI extends StatelessWidget {
       child: Column(
         children: [
           CircleAvatar(
-            radius: 40.r,
+            radius: 38.r,
             backgroundImage: NetworkImage(tops.imgAuthors),
           ),
-          SizedBox(height: 14.h),
+          SizedBox(height: 10.h),
           Text(
             tops.topAuthors.tr,
             style: TextStyle(color: Colors.black, fontSize: 12.sp),

@@ -55,7 +55,7 @@ class NumScreen extends StatelessWidget {
                           endIndent: 20,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.only(end: 240.w, top: 20.h),
+                          padding: EdgeInsetsDirectional.only(end: 240.w, top: 10.h),
                           child: Text(
                             'Top Authors'.tr,
                             style: TextStyle(
@@ -65,12 +65,14 @@ class NumScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                                children: to.map((e) {
-                              return TopUI(tops: e);
-                            }).toList()))
+                        Expanded(
+                          child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                  children: to.map((e) {
+                                return TopUI(tops: e);
+                              }).toList())),
+                        )
                       ],
                     ),
                   ),
